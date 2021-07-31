@@ -1,6 +1,5 @@
 require('dotenv').config();
-let TelegramBot = require('node-telegram-bot-api');
-let decentWords = require('./decent-words.json')["decent-words"];
+const TelegramBot = require('node-telegram-bot-api');
 const isAbuse = require('./utils/isAbuse');
 
 let bot = new TelegramBot(process.env.BOT_TOKEN, {polling: true});
@@ -10,7 +9,7 @@ bot.on('message', async (msg) => {
 
   let {message_id, text} = msg;
   let chatId = msg.chat.id;
-  if (isAbuse(text, decentWords)) {
+  if (isAbuse(text)) {
     await bot.deleteMessage(chatId, message_id);
   }
 });

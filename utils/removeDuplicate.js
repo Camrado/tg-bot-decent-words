@@ -8,9 +8,9 @@ const removeDuplicate = (text) => {
   while (i < chars.length) {
     if (chars[i] === chars[i - 1]) {
       chars.splice(i, 1);
-      continue;
+    } else {
+      i++;
     }
-    i++;
   }
 
   return chars.join('');
