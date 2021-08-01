@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "pm2 start app.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "node-telegram-bot-api": "^0.54.0"
+  },
+  "devDependencies": {
+    "pm2": "^5.1.0"
   }
 }
